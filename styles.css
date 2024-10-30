@@ -1,0 +1,392 @@
+/* General Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background-color: #f4f6f8; /* Light background color */
+}
+
+/* Header Styles */
+header {
+    background: #34495e; /* Dark blue background */
+    color: #ffffff; /* White text */
+    padding: 15px 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-left: 30px;
+}
+
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+}
+
+nav ul li a::after {
+    content: '';
+    display: block;
+    height: 2px;
+    width: 0;
+    background: #e74c3c; /* Red underline */
+    transition: width 0.3s;
+}
+
+nav ul li a:hover::after {
+    width: 100%; /* Full underline on hover */
+}
+
+/* Hero Section */
+.hero {
+    background: url('https://source.unsplash.com/1600x900/?business') no-repeat center center/cover; /* Hero image */
+    color: #ffffff;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    animation: fadeIn 1s ease-in-out; /* Fade-in effect */
+}
+
+.cta-button {
+    background: #e74c3c; /* Red button */
+    color: #ffffff;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s, transform 0.3s; /* Smooth transition */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+}
+
+.cta-button:hover {
+    background: #c0392b; /* Darker red on hover */
+    transform: translateY(-3px); /* Lift effect on hover */
+}
+
+/* Keyframe Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* About Section */
+.about {
+    padding: 40px 20px;
+    background-color: #ffffff; /* White background */
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Light shadow */
+}
+
+.about img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    animation: slideIn 1s ease-in-out; /* Slide-in effect */
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Services Section */
+.services {
+    background-color: #e1f5fe; /* Light blue background */
+    padding: 40px 20px;
+}
+
+.service-container {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap */
+    justify-content: space-between; /* Space items evenly */
+}
+
+.service-item {
+    background: #ffffff; /* White background for service items */
+    margin: 20px; /* Margin around items */
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    flex: 1 1 calc(30% - 40px); /* Three items in a row with spacing */
+    display: flex;
+    align-items: center; /* Center align items */
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition */
+    position: relative; /* For absolute positioning of text */
+}
+
+.service-item img {
+    width: 80px; /* Fixed width for images */
+    height: 80px; /* Fixed height for images */
+    margin-right: 20px; /* Space between image and text */
+    border-radius: 50%; /* Rounded images */
+}
+
+.service-description {
+    flex-grow: 1; /* Allow text to grow and fill available space */
+}
+
+.service-item:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
+}
+
+/* Contact Section */
+.contact {
+    background-color: #ffffff; /* White background */
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.contact form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact input,
+.contact textarea {
+    width: calc(100% - 20px); /* Full width inputs */
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s; /* Smooth border color transition */
+}
+
+.contact input:focus,
+.contact textarea:focus {
+    border-color: #34495e; /* Change border color on focus */
+    outline: none; /* Remove default outline */
+}
+
+.contact button {
+    background: #34495e; /* Dark blue button */
+    color: #ffffff;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s; /* Smooth transition */
+}
+
+.contact button:hover {
+    background: #2c3e50; /* Darker blue on hover */
+    transform: translateY(-3px); /* Lift effect on hover */
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 15px 0;
+    background: #34495e; /* Dark blue background */
+    color: #ffffff; /* White text */
+}
+/* Services Section */
+.services {
+    background-color: #e1f5fe; /* Light blue background */
+    padding: 40px 20px;
+}
+
+.service-container {
+    display: flex;               /* Use flexbox to align items */
+    flex-wrap: wrap;            /* Allow items to wrap on small screens */
+    justify-content: center;     /* Center align the items */
+}
+
+.service-item {
+    background: #ffffff;        /* White background for service items */
+    margin: 20px;               /* Margin around items */
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    flex: 1 1 calc(30% - 40px); /* Responsive layout for 3 items in a row */
+    display: flex;
+    align-items: center;         /* Center align items vertically */
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition */
+    position: relative;          /* For absolute positioning of text */
+    min-width: 250px;            /* Ensure a minimum width for smaller screens */
+}
+
+.service-item img {
+    width: 80px;                /* Fixed width for images */
+    height: 80px;               /* Fixed height for images */
+    margin-right: 20px;         /* Space between image and text */
+    border-radius: 50%;         /* Rounded images */
+}
+
+.service-description {
+    flex-grow: 1;               /* Allow text to grow and fill available space */
+}
+
+.service-item:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
+}
+
+/* Ensure responsiveness on smaller screens */
+@media (max-width: 768px) {
+    .service-item {
+        flex: 1 1 calc(45% - 40px); /* Two items in a row on medium screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .service-item {
+        flex: 1 1 100%; /* Stack items on top of each other on small screens */
+    }
+}
+/* Services Section */
+.services {
+    background-color: #e1f5fe; /* Light blue background */
+    padding: 40px 20px;
+}
+
+.service-container {
+    display: flex;               /* Use flexbox for layout */
+    flex-wrap: wrap;            /* Allow wrapping to maintain responsiveness */
+    justify-content: center;     /* Center align items */
+}
+
+.service-item {
+    background: #ffffff;        /* White background for service items */
+    margin: 20px;               /* Margin around items */
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    flex: 1 1 calc(30% - 40px); /* Responsive layout for 3 items in a row */
+    display: flex;
+    align-items: center;         /* Center align items vertically */
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition */
+    position: relative;          /* For absolute positioning of text */
+    min-width: 250px;            /* Minimum width for smaller screens */
+}
+
+.service-item img {
+    width: 80px;                /* Fixed width for images */
+    height: 80px;               /* Fixed height for images */
+    margin-right: 20px;         /* Space between image and text */
+    border-radius: 50%;         /* Rounded images */
+}
+
+.service-description {
+    flex-grow: 1;               /* Allow text to grow and fill available space */
+}
+
+.service-item:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
+}
+
+/* Ensure responsiveness on smaller screens */
+@media (max-width: 768px) {
+    .service-item {
+        flex: 1 1 calc(45% - 40px); /* Two items in a row on medium screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .service-item {
+        flex: 1 1 100%; /* Stack items on top of each other on small screens */
+    }
+}
+/* About Section */
+.about {
+    background-color: #f5f5f5; /* Light gray background */
+    padding: 40px 20px;
+    text-align: center; /* Center-align text */
+}
+
+.about-content {
+    display: flex;               /* Use flexbox for layout */
+    align-items: center;        /* Center items vertically */
+    justify-content: center;     /* Center align items horizontally */
+    flex-wrap: wrap;            /* Allow wrapping for responsiveness */
+    margin-top: 20px;           /* Margin on top */
+}
+
+.about img {
+    width: 300px;               /* Set fixed width for the image */
+    height: auto;               /* Maintain aspect ratio */
+    border-radius: 5px;         /* Slight rounding of corners */
+    margin-right: 20px;         /* Space between image and text */
+}
+
+.about-description {
+    max-width: 600px;           /* Limit width of text */
+    text-align: left;           /* Left-align text */
+}
+
+.about h3 {
+    margin-top: 20px;           /* Space above subheading */
+    font-size: 24px;            /* Increase font size for subheading */
+    color: #333;                /* Darker color for contrast */
+}
+
+.about p {
+    font-size: 16px;            /* Font size for paragraph */
+    line-height: 1.6;           /* Line height for readability */
+    color: #666;                /* Lighter gray text color */
+}
+
+/* Ensure responsiveness on smaller screens */
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column;  /* Stack items on smaller screens */
+        text-align: center;       /* Center-align text */
+    }
+
+    .about img {
+        margin-bottom: 20px;      /* Space below image when stacked */
+        margin-right: 0;          /* Remove right margin */
+    }
+}
